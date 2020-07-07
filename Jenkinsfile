@@ -19,4 +19,16 @@ pipeline {
     }
   }
 
+  post {
+    always {
+      echo 'something always run after stages'
+    }
+    success {
+      echo 'something run after stages success'
+    }
+    failure {
+      echo 'something run after stages failure'
+    }
+  }
+
 }
