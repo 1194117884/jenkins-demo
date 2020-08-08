@@ -9,12 +9,7 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        echo 'building the application...'
-      }
-    }
-    stage("test") {
-      steps {
-        echo 'testing the application...'
+        sh 'gradle assemble'
       }
     }
     stage("deploy") {
