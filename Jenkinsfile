@@ -15,6 +15,7 @@ pipeline {
     stage("environment") {
       steps {
         echo 'reading something from env'
+        echo '${ENV_NAME}'
         echo "${ENV_NAME}"
       }
     }
