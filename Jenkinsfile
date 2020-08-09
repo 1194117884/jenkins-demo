@@ -1,12 +1,24 @@
 pipeline {
   agent any
 
+  environment {
+    ENV_NAME = 'env_value'
+  }
+
   tools {
     jdk 'jdk-8'
     gradle 'gradle-6.5.1'
   }
 
   stages {
+
+    stage("environment") {
+      steps {
+        echo 'reading something from env'
+        echo "${ENV_NAME}"
+      }
+    }
+
     stage("build") {
       steps {
         echo 'building the application...'
