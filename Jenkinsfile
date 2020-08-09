@@ -14,9 +14,12 @@ pipeline {
 
     stage("environment") {
       steps {
-        echo 'reading something from env'
-        echo '${ENV_NAME}'
+        echo 'reading something from env...'
+
         echo "${ENV_NAME}"
+        echo "${env.ENV_NAME}"
+
+        echo 'wrong way read environment: ${ENV_NAME}'
       }
     }
 
